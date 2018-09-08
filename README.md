@@ -9,7 +9,7 @@ Based on my experiences with the old one, I decided on the following cryteria:
 
 ### Criteria
 * x86-based, so I have a maximum of software to chose from
-* Linux-based, so can follow available how-tos and documentation for manual software installations (even if targeted at desktop OSs)
+* Linux-based, so I can follow available how-tos and documentation for manual software installations (even if targeted at desktop OSs)
 * RAID for data protection (= at least 2 HDD slots)
 * able to saturate my Gigabit-Ethernet home infrastructure
 * maintain nearly full transfer speed even when handling additional load of wasteful protocols like smb and overhead of transport and disk encryption (= beefy CPU with HW accelerated crypto)
@@ -40,3 +40,11 @@ So I ordered the following parts
 
 Including the original prices of the things I had around and including shipping, I paid 5% more than the cheapest offer for a Synology DS218+. (Because I made a last-minute upgrade on the chipsets. Could have gone for a J4105 to keep within the budget).
 For this I got 2x the single, 3x the multi thread performance, added 6GB more RAM and got 119.5GB more space on the FLASH system partition.
+
+## The HW build
+
+Putting it all togetheer proved more complicated than originally anticipated. The Cooler Master 130 is, although well-built for it's cheap price, totally rubbish. Instead of offering a traditional drive cage to mount disks in (there would be space for about 6-7 3.5inch drives + a 5.25inch one), they opted to just give you 3 mount points on the bottom(3.5'), side(3.5') and top(2.5') with the option to put another drive of any size in the 5.25 inch bay. And even those are placed in a way that makes the use of 90deg SATA data/power plugs impossible (although they ship them with the case) and doesn't even let me mount them the other way around. With just 2 data drives and 'creative' mounting hacks (zip ties ftw!) I managed for my setup, but I will have to build my own drive cage should I want to update to 4 drives. You better chose a differnet case.
+
+Plugin the DC-DC power adapter in had me puzzled for a while. The ITX connector on the board had clear asymetrical shapes to prevent pluging it in the wrong way around. But they didn't match up with the plug! I was shocked. Until I finally made the stubborn atempt to plug it in anyway and to my suprise the plug was actually 2x2 pins shorter than the connector matching the safety-shapes differently than expected.
+
+The case has room for a full-size ATX/ITX power supply, which I didn't need. I zip-tied the small power brick into the case instead to have it out of the way. The 2 fans (80mm side + 120mm front) are overkill for the TDP-10W CPU. I kept them on auto-speed because the NAS sits in the basement anyway. If you are going for a living room-compatible noise level, you can deactivate the side-fan and reduce the 120mm to a minimum to put a gentle breeze on the disks and power brick to reduce the noise to the low hum of 2 spinning disks. 
