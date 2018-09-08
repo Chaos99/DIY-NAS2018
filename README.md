@@ -47,4 +47,23 @@ Putting it all togetheer proved more complicated than originally anticipated. Th
 
 Plugin the DC-DC power adapter in had me puzzled for a while. The ITX connector on the board had clear asymetrical shapes to prevent pluging it in the wrong way around. But they didn't match up with the plug! I was shocked. Until I finally made the stubborn atempt to plug it in anyway and to my suprise the plug was actually 2x2 pins shorter than the connector matching the safety-shapes differently than expected.
 
-The case has room for a full-size ATX/ITX power supply, which I didn't need. I zip-tied the small power brick into the case instead to have it out of the way. The 2 fans (80mm side + 120mm front) are overkill for the TDP-10W CPU. I kept them on auto-speed because the NAS sits in the basement anyway. If you are going for a living room-compatible noise level, you can deactivate the side-fan and reduce the 120mm to a minimum to put a gentle breeze on the disks and power brick to reduce the noise to the low hum of 2 spinning disks. 
+The case has room for a full-size ATX/ITX power supply, which I didn't need. I zip-tied the small power brick into the case instead to have it out of the way. The 2 fans (80mm side + 120mm front) are overkill for the TDP-10W CPU. I kept them on auto-speed because the NAS sits in the basement anyway. If you are going for a living room-compatible noise level, you can deactivate the side-fan and reduce the 120mm to a minimum to put a gentle breeze on the disks and power brick to reduce the noise to the low hum of 2 spinning disks.
+
+## The SW installation
+### OS
+Although FreeNAS being the most advanced open source NAS OS, I opted for OpenMediaVault4 because I wanted a Debian-based System I know my way around instead of a FreeBSD-based system I know nothing about. As ZFS-support (one big advantage of the FreeNAS OS) is barely even usable on my setup (8GB RAM is listed as the *minimum* requirement), I didn't feel I loose out on anything.
+
+The J5005 board has a UEFI-only bootloader without any traditional DOS-bootsektor fallback. This made using traditional installation media impossible. I therefore did *not* use an OpenMediaVault install image, but installed plain Debian stable (Stretch) first and then pulled OpenMediaVault from the package system.
+
+#### Creating the boot device
+tbd
+
+#### Installing debian
+I just followed the Debian installer. Keyboard layout, date/time and language can be set to your liking. I chose to manually partition the SSD and created a 500MB /boot partition (vfat) and use the rest for the OS (ext4). To limit wear on the SDD, I did *not* create a /swap partition. At the end you will be asked as what the system will be used. Although 'web-server' is a valid answer, de-select all, because it would install appache but we are going to use nginx anyway
+
+I'm not going to use this as any kind of media-pc, so I also had no use for 'desktop-pc' with a window manager. I'm fine with a text console. If you need a graphical dektop environment, feel free to install it here.
+After booting into your new system for the first time, do a 
+```bash
+apt-get update; apt-get dist-upgrade; apt-get upgrade
+```
+to get everything up to the newest version.
