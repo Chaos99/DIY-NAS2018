@@ -39,7 +39,7 @@ So I ordered the following parts
 * * 1 Sata cable
 
 Including the original prices of the things I had around and including shipping, I paid 5% more than the cheapest offer for a Synology DS218+. (Because I made a last-minute upgrade on the chipsets. Could have gone for a J4105 to keep within the budget).
-For this I got 2x the single, 3x the multi thread performance, added 6GB more RAM and got 119.5GB more space on the FLASH system partition.
+For this I got [2x the single, 3x the multi thread performance](https://www.cpu-monkey.com/en/compare_cpu-intel_pentium_j5005-844-vs-intel_celeron_j3355-663), added 6GB more RAM and got 119.5GB more space on the FLASH system partition.
 
 ## The HW build
 
